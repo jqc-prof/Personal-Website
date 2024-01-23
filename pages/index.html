@@ -3,17 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>My Website</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <script src="../assets/scripts/main.js"></script>
+    <style>
+        #contactForm label {
+            display: inline-block;
+            width: 100px; /* Set the desired width for the labels */
+            margin-bottom: 5px; /* Adjust the margin-bottom as needed */
+        }
+
+        #contactForm input,
+        #contactForm textarea {
+            display: inline-block;
+            width: 200px; /* Set the desired width for the input fields */
+            margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+        }
+    </style>
 </head>
 <body>
-    <pr>
-        <b>Welcome</b>
-    <p>This is the default page.</p>
-    </pr>
-    <ol>
-        <dt>Vincent Jia</dt>
-        <dd>This Vincent Jia</dd>
-        <a src = "about.html"></a>
-    </ol>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../pages/index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <pr>
+            <b>Welcome</b>
+            <p>This is my website!</p>
+        </pr>
+    </section>
+
+    <section id="about" class="NameDescription">
+        <h1>Vincent Jia</h1>
+        <p>This is Vincent Jia's website. Explore and learn more about me!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="message">Message:</label>
+            <br>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Vincent Jia. All rights reserved.</p>
+    </footer>
 </body>
 </html>
