@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <script src="../assets/scripts/main.js"></script>
     <style>
         #contactForm label {
             display: inline-block;
-            width: 100px; /* Set the desired width for the labels */
-            margin-bottom: 5px; /* Adjust the margin-bottom as needed */
+            width: 50px; /* Set the desired width for the labels */
+            margin-bottom: 0px; /* Adjust the margin-bottom as needed */
         }
 
         #contactForm input,
@@ -60,6 +59,27 @@
             <button type="submit">Submit</button>
         </form>
     </section>
+
+    <script src="../assets/scripts/main.js"></script>
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Send form data to the server
+            fetch('http://localhost:3000/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, message }),
+            })
+            .then(response => response.text())
+            .then(alert)
+            .catch(console.error);
+        }
+    </script>
 
     <footer>
         <p>&copy; 2023 Vincent Jia. All rights reserved.</p>
