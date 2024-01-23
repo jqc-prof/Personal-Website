@@ -24,3 +24,24 @@ function saveFormData(formData) {
 
     alert('Form submitted successfully!');
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.getElementById('imageGallery');
+
+    // Replace these URLs with your image URLs
+    const imageUrls = [
+        '../assets/images/photomode_02102023_002353.png'
+    ];
+
+    // Create image elements and append them to the gallery
+    imageUrls.forEach(function(url) {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = 'Gallery Image';
+        img.addEventListener('click', function() {
+            // Handle click event (e.g., open a modal with the full-size image)
+            console.log('Image clicked:', url);
+        });
+        gallery.appendChild(img);
+    });
+});

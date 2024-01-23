@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../pages/index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <pr>
+            <b>I am a graduate of Ohio State University with a bachelor's in Computer Science and Engineering.</b>
+            <p>This website is here to demonstrate my ability to work with HTML, CSS, JavaScript, and various back-end and front-end frameworks.</p>
+        </pr>
+    </section>
+
+    <script src="../assets/scripts/main.js"></script>
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Send form data to the server
+            fetch('http://localhost:3000/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, message }),
+            })
+            .then(response => response.text())
+            .then(alert)
+            .catch(console.error);
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2023 Vincent Jia. All rights reserved.</p>
+    </footer>
+</body>
+</html>
